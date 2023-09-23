@@ -1,0 +1,35 @@
+.plantinfo__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+.plantinfo__container .picssun__container {
+  margin-bottom: 10px;
+}
+.plantinfo__container .button-add {
+  padding: 8px 10px;
+  background: #fff;
+  border: solid 1px grey;
+  border-radius: 5px;
+  color: #242424;
+}
+.plantinfo__container .button-add:hover {
+  cursor: pointer;
+  background-color: #f4f4f4;
+}
+.plantinfo__container .button-add:active {
+  background-color: #b9b9b9;
+}
+.plantinfo__container h2 {
+  color: #242424;
+  margin-top: 5px;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+.plantinfo__container img {
+  height: 12px;
+}
+
+/*# sourceMappingURL=Plantinfo.css.map */

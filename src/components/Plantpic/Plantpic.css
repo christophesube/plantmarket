@@ -1,0 +1,26 @@
+.plantpic__container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.plantpic__container .plant__price {
+  position: relative;
+  top: 50px;
+  left: 200px;
+  height: 50px;
+  width: 50px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #38B472;
+  text-align: center;
+  line-height: 50px;
+}
+.plantpic__container img {
+  max-height: 250px;
+  width: 250px;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=Plantpic.css.map */

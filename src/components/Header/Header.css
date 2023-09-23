@@ -1,0 +1,17 @@
+.header__container {
+  background-color: #fff;
+  color: #242424;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: solid 3px #242424;
+  padding: 30px;
+}
+.header__container img {
+  height: 50px;
+}
+.header__container h1 {
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=Header.css.map */

@@ -1,0 +1,21 @@
+.footer__background {
+  background-color: #fff;
+  color: #242424;
+  border-top: solid 3px #242424;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
+.footer__background input {
+  background: #fff;
+  border: solid 1px #242424;
+  color: #242424;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+/*# sourceMappingURL=Footer.css.map */
