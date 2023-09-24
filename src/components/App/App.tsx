@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import plants from "../../datas/plants.js";
 import Basket from "../Basket/Basket.js";
 
@@ -29,6 +29,7 @@ type item = {
 function App() {
   const [btnOpenBasket, setbtnOpenBasket] = useState(false);
   const [basketContent, setBasketContent] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const handleAddCart = (e: React.MouseEvent<HTMLButtonElement>) => {
     const tempBasket: item[] = [...basketContent];
@@ -60,6 +61,20 @@ function App() {
     setBasketContent(tempBasket);
   };
 
+  const handleCalcBasket = () => {
+    const initValue = 0;
+    setTotalAmount(
+      basketContent.reduce(
+        (acc: number, item: basket) => acc + item.totalPrice,
+        initValue
+      )
+    );
+  };
+
+  useEffect(() => {
+    handleCalcBasket();
+  });
+
   return (
     <>
       <Header />
@@ -87,6 +102,8 @@ function App() {
           setbtnOpenBasket={setbtnOpenBasket}
           basketContent={basketContent}
           setBasketContent={setBasketContent}
+          totalAmount={totalAmount}
+          setTotalAmount={setTotalAmount}
         />
       </div>
       <Footer />

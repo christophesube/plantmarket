@@ -13,6 +13,8 @@ type Props = {
   basketContent: basket;
   setbtnOpenBasket: boolean;
   setBasketContent: React.Dispatch<React.SetStateAction<never[]>>;
+  setTotalAmount: React.Dispatch<React.SetStateAction<number>>;
+  totalAmount: number;
 };
 
 const Basket = ({
@@ -20,9 +22,9 @@ const Basket = ({
   setbtnOpenBasket,
   basketContent,
   setBasketContent,
+  totalAmount,
+  setTotalAmount,
 }: Props) => {
-  const [totalAmount, setTotalAmount] = useState(0);
-
   let styleBasket;
 
   if (!btnBasket) {
@@ -38,15 +40,15 @@ const Basket = ({
     setBasketContent([]);
   };
 
-  const handleCalcBasket = () => {
-    const initValue = 0;
-    setTotalAmount(
-      basketContent.reduce(
-        (acc: number, item: basket) => acc + item.totalPrice,
-        initValue
-      )
-    );
-  };
+  // const handleCalcBasket = () => {
+  //   const initValue = 0;
+  //   setTotalAmount(
+  //     basketContent.reduce(
+  //       (acc: number, item: basket) => acc + item.totalPrice,
+  //       initValue
+  //     )
+  //   );
+  // };
 
   return (
     <aside className={styleBasket}>
@@ -77,13 +79,6 @@ const Basket = ({
             handleClickReset();
           }}>
           Vider le panier
-        </button>
-        <button
-          className='basket-clear'
-          onClick={() => {
-            handleCalcBasket();
-          }}>
-          Calculer le panier
         </button>
       </div>
     </aside>
