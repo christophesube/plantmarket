@@ -5,5 +5,3 @@ React (vite js) / Typescript application.
 Manages the addition of items to the shopping cart and dynamically calculates the total amount.
 
 ![La Maison Jungle screenshot](/public/assets/lmj.png "La Maison Jungle")
-
-Demo link :
