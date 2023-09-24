@@ -1,4 +1,4 @@
-import { ReactEventHandler, useState } from "react";
+import { useState } from "react";
 import plants from "../../datas/plants.js";
 import Basket from "../Basket/Basket.js";
 
@@ -8,7 +8,7 @@ import Plantitem from "../Plantitem/Plantitem";
 
 import "./App.css";
 
-interface plant {
+type plant = {
   id: number;
   name: string;
   pic: string;
@@ -17,31 +17,31 @@ interface plant {
   water: number;
   sunkey: string;
   waterkey: string;
-}
+};
 
-interface item {
+type item = {
   name: string;
   itemPrice: number;
   totalPrice: number;
   quantity: number;
-}
+};
 
 function App() {
   const [btnOpenBasket, setbtnOpenBasket] = useState(false);
   const [basketContent, setBasketContent] = useState([]);
 
-  const handleAddCart = (e: ReactEventHandler) => {
-    const tempBasket = [...basketContent];
+  const handleAddCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const tempBasket: item[] = [...basketContent];
     const name: string = e.parentNode.firstChild.textContent;
     const itemPrice: number = parseInt(
       e.parentNode.previousSibling.firstChild.textContent.replace("€", "")
     );
-    const totalPrice: number = 30;
+    const totalPrice = 30;
     const item: item = { name, itemPrice, totalPrice, quantity: 0 };
 
     if (
       tempBasket.length === 0 ||
-      tempBasket.find((item) => item.name === name) === undefined
+      tempBasket.find((item: item) => item.name === name) === undefined
     ) {
       item.name = name;
       item.itemPrice = itemPrice;
@@ -49,11 +49,12 @@ function App() {
       item.quantity = 1;
       tempBasket.push(item);
     } else {
-      const itemToChange = tempBasket.filter((item) => item.name === name);
+      const itemToChange: item[] = tempBasket.filter(
+        (item: item) => item.name === name
+      );
       itemToChange[0].quantity = itemToChange[0].quantity + 1;
       itemToChange[0].totalPrice =
         itemToChange[0].quantity * itemToChange[0].itemPrice;
-      console.log(tempBasket);
     }
 
     setBasketContent(tempBasket);

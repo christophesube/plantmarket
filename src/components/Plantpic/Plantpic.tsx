@@ -1,6 +1,11 @@
 import "./Plantpic.css";
 
-const Plantpic = ({ img, price }: { img: string; price: number }) => {
+type Props = {
+  img: string;
+  price: number;
+};
+
+const Plantpic = ({ img, price }: Props) => {
   return (
     <div className='plantpic__container'>
       <span className='plant__price'>{price}€ </span>

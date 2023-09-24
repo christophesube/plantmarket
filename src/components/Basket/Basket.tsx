@@ -1,12 +1,26 @@
 import { useState } from "react";
 import "./Basket.css";
 
-const Basket: React.FC<{
+type basket = {
+  name: string;
+  itemPrice: number;
+  totalPrice: number;
+  quantity: number;
+};
+
+type Props = {
   btnBasket: boolean;
+  basketContent: basket;
   setbtnOpenBasket: boolean;
-  basketContent: Array<object>;
-  setBasketContent;
-}> = ({ btnBasket, setbtnOpenBasket, basketContent, setBasketContent }) => {
+  setBasketContent: React.Dispatch<React.SetStateAction<never[]>>;
+};
+
+const Basket = ({
+  btnBasket,
+  setbtnOpenBasket,
+  basketContent,
+  setBasketContent,
+}: Props) => {
   const [totalAmount, setTotalAmount] = useState(0);
 
   let styleBasket;
@@ -27,7 +41,10 @@ const Basket: React.FC<{
   const handleCalcBasket = () => {
     const initValue = 0;
     setTotalAmount(
-      basketContent.reduce((acc, item) => acc + item.totalPrice, initValue)
+      basketContent.reduce(
+        (acc: number, item: basket) => acc + item.totalPrice,
+        initValue
+      )
     );
   };
 

@@ -13,13 +13,7 @@ interface plant {
   waterkey: string;
 }
 
-const Plantitem = ({
-  plant,
-  handleAddCart,
-  handleCalcBasket,
-}: {
-  plant: plant;
-}) => {
+const Plantitem = ({ plant, handleAddCart }: { plant: plant }) => {
   return (
     <div className='plantitem__container'>
       <Plantpic img={plant.pic} price={plant.price} />
@@ -30,7 +24,6 @@ const Plantitem = ({
         sunkey={plant.sunkey}
         name={plant.name}
         handleAddCart={handleAddCart}
-        handleCalcBasket={handleCalcBasket}
       />
     </div>
   );
