@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import "./Basket.css";
 
 type basket = {
@@ -25,33 +25,24 @@ const Basket = ({
   totalAmount,
   setTotalAmount,
 }: Props) => {
-  let styleBasket;
+  const defineStyle = () => {
+    let styleBasket: string;
+    if (!btnBasket) {
+      return (styleBasket = "basket__container basket-close");
+    }
 
-  if (!btnBasket) {
-    styleBasket = "basket__container basket-close";
-  }
-
-  if (btnBasket) {
-    styleBasket = "basket__container basket-open";
-  }
+    if (btnBasket) {
+      return (styleBasket = "basket__container basket-open");
+    }
+  };
 
   const handleClickReset = () => {
     setTotalAmount(0);
     setBasketContent([]);
   };
 
-  // const handleCalcBasket = () => {
-  //   const initValue = 0;
-  //   setTotalAmount(
-  //     basketContent.reduce(
-  //       (acc: number, item: basket) => acc + item.totalPrice,
-  //       initValue
-  //     )
-  //   );
-  // };
-
   return (
-    <aside className={styleBasket}>
+    <aside className={defineStyle()}>
       <span
         className='close__button'
         onClick={() => {

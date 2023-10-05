@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import plants from "../../datas/plants.js";
 import Basket from "../Basket/Basket.js";
-
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Plantitem from "../Plantitem/Plantitem";
 
 import "./App.css";
+import React from "react";
 
 type plant = {
   id: number;

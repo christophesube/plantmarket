@@ -13,7 +13,13 @@ interface plant {
   waterkey: string;
 }
 
-const Plantitem = ({ plant, handleAddCart }: { plant: plant }) => {
+const Plantitem = ({
+  plant,
+  handleAddCart,
+}: {
+  plant: plant;
+  handleAddCart: React.FC;
+}) => {
   return (
     <div className='plantitem__container'>
       <Plantpic img={plant.pic} price={plant.price} />
