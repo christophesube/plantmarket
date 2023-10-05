@@ -2,24 +2,7 @@ import Plantinfo from "../Plantinfo/Plantinfo";
 import Plantpic from "../Plantpic/Plantpic";
 import "./Plantitem.css";
 
-interface plant {
-  id: number;
-  name: string;
-  pic: string;
-  price: number;
-  sun: number;
-  water: number;
-  sunkey: string;
-  waterkey: string;
-}
-
-const Plantitem = ({
-  plant,
-  handleAddCart,
-}: {
-  plant: plant;
-  handleAddCart: React.FC;
-}) => {
+const Plantitem = ({ plant, handleAddCart }) => {
   return (
     <div className='plantitem__container'>
       <Plantpic img={plant.pic} price={plant.price} />

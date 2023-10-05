@@ -2,15 +2,6 @@ import "./Plantinfo.css";
 import water from "../../../public/assets/water.svg";
 import sun from "../../../public/assets/sun.svg";
 
-type Props = {
-  watkey: string;
-  sunkey: string;
-  waterlevel: number;
-  sunlevel: number;
-  name: string;
-  handleAddCart: React.FC;
-};
-
 const Plantinfo = ({
   watkey,
   sunkey,
@@ -18,7 +9,7 @@ const Plantinfo = ({
   sunlevel,
   name,
   handleAddCart,
-}: Props) => {
+}) => {
   const waternb = [];
   const sunnb = [];
   for (let index = 0; index < waterlevel; index++) {

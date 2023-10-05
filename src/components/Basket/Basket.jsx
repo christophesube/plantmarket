@@ -1,22 +1,6 @@
 import React from "react";
 import "./Basket.css";
 
-type basket = {
-  name: string;
-  itemPrice: number;
-  totalPrice: number;
-  quantity: number;
-};
-
-type Props = {
-  btnBasket: boolean;
-  basketContent: basket;
-  setbtnOpenBasket: boolean;
-  setBasketContent: React.Dispatch<React.SetStateAction<never[]>>;
-  setTotalAmount: React.Dispatch<React.SetStateAction<number>>;
-  totalAmount: number;
-};
-
 const Basket = ({
   btnBasket,
   setbtnOpenBasket,
@@ -24,9 +8,9 @@ const Basket = ({
   setBasketContent,
   totalAmount,
   setTotalAmount,
-}: Props) => {
+}) => {
   const defineStyle = () => {
-    let styleBasket: string;
+    let styleBasket;
     if (!btnBasket) {
       return (styleBasket = "basket__container basket-close");
     }
