@@ -2,7 +2,7 @@ export default [
   {
     id: 1,
     name: "Monstera",
-    pic: "../../../public/assets/monstera.jpg",
+    pic: "./assets/monstera.jpg",
     price: 15,
     sun: 3,
     water: 2,
